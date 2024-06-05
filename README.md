@@ -5,7 +5,7 @@
 ## How to run 
 
 ```
-flask --app init run --debug
+flask --app app run --debug
 ```
 
 ## How to install 
