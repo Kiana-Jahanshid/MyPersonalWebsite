@@ -43,14 +43,6 @@ SQLModel.metadata.create_all(engine)
 
 
 
-def auth(email , password):
-    # if email == "k.jhnshid@gmail.com" and password == "1234" :
-    #     return True
-    # else :
-    #     return False
-    return True
-
-
 
 @app.route("/")
 def root():
