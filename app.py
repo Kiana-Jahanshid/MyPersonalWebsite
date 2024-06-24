@@ -37,6 +37,7 @@ class User(SQLModel , table=True):
 
 app = Flask(import_name="__init__" , template_folder="" , static_folder="static")
 app.secret_key = "my_secret"
+app.config["UPLOAD_FOLDER"] = "static/uploads/"
 
 engine = create_engine(url="sqlite:///./database.db" , echo=True)
 SQLModel.metadata.create_all(engine)
