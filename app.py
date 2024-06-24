@@ -1,8 +1,9 @@
-from flask import Flask , render_template , request , redirect,session , url_for , make_response
+from flask import Flask , render_template , request , redirect,session , url_for , make_response , g
 from sqlmodel import Field , SQLModel ,Session , select , create_engine 
 from pydantic import BaseModel
 import bcrypt
 import time
+import sqlite3
 from werkzeug.datastructures import MultiDict 
 
 
@@ -37,9 +38,8 @@ class User(SQLModel , table=True):
 
 app = Flask(import_name="__init__" , template_folder="" , static_folder="static")
 app.secret_key = "my_secret"
-app.config["UPLOAD_FOLDER"] = "static/uploads/"
 
-engine = create_engine(url="sqlite:///./database.db" , echo=True)
+engine = create_engine(url="sqlite:///db/database.db" , echo=True)
 SQLModel.metadata.create_all(engine)
 
 

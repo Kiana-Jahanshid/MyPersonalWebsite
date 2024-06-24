@@ -1,8 +1,11 @@
 {
+  "flask": {
+    "pythonVersion": "3.10"
+},
     "disks": [
       {
-        "name": "website-disk",
-        "mountTo": "/static/uploads"
+        "name": "database",
+        "mountTo": "db"
       }
     ]
 }
