@@ -1,0 +1,75 @@
+{% extends "templates/layout.html" %}
+
+{% block title %}
+    register
+{% endblock %}
+
+
+{% block content %}
+
+        <div class="container" , style="padding-top: 130px;">
+        <input type="checkbox" id="flip">
+        <div class="forms">
+            <div class="form-content">
+            <div class="signup-form" style="margin:0 auto;">
+                <div class="title">Signup</div>
+            <form method="POST">
+                <div class="input-boxes">
+
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Firstname" name="firstname" required>
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Lastname" name="lastname" required>
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Username" name="username" required>
+                    </div>
+
+                    <div class="input-box">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" name="email" required>
+                    </div>                    
+ 
+                    <div class="input-box">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" placeholder="Country" name="country" required>
+                        </div> 
+
+                    <div class="input-box">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" placeholder="City" name="city" required>
+                    </div> 
+
+                    <div class="input-box">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Age" name="age" required>
+                    </div>
+
+                    <div class="input-box">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" name="password" required>
+                    </div>
+
+                    <div class="input-box">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                    </div>
+
+                    <div class="button input-box">
+                        <input type="submit" value="Sumbit">
+                    </div>
+
+                    <div class="text sign-up-text">Already have an account? <a href="/login"><u for="flip">Login now</u></a></div>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        
+{% endblock %}
