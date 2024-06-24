@@ -1,9 +1,8 @@
-from flask import Flask , render_template , request , redirect,session , url_for , make_response , g
+from flask import Flask , render_template , request , redirect,session , url_for , make_response 
 from sqlmodel import Field , SQLModel ,Session , select , create_engine 
 from pydantic import BaseModel
 import bcrypt
 import time
-import sqlite3
 from werkzeug.datastructures import MultiDict 
 
 
