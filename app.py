@@ -67,22 +67,18 @@ def register():
     elif request.method == "POST" :
         try:
             register_data = RegisterModel(username=request.form["username"]  , city= request.form["city"]  ,country= request.form["country"] , first_name= request.form["firstname"] , last_name= request.form["lastname"] , email= request.form["email"] , age= request.form["age"] ,password= request.form['password'], confirm_password= request.form["confirm_password"])#validating attributes type
-            print(register_data)
-            print(request.form["username"])
+            # print(register_data)
         except:
             print("type error")
             return redirect(url_for("register"))
         if register_data.confirm_password == register_data.password :
             joined_time = time.time()
-            print(joined_time)
             with Session(engine) as db_session : 
                 query = select(User).where(User.username ==  request.form["username"] )
                 result = db_session.exec(query).first()
             if not result :
-                print(register_data.password)
                 password_byte = register_data.password.encode("utf-8")
                 hashed_password = bcrypt.hashpw(password_byte , bcrypt.gensalt())
-                print(hashed_password)
                 with Session(engine) as db_session :
                     new_user = User(username= request.form["username"] ,password=hashed_password , city= request.form["city"] ,country= request.form["country"] , first_name= request.form["firstname"] , last_name= request.form["lastname"] , email= request.form["email"] , age= request.form["age"] ) # create a user object
                     db_session.add(new_user) 
