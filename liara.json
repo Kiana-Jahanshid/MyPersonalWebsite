@@ -1,0 +1,8 @@
+{
+    "disks": [
+      {
+        "name": "website-disk",
+        "mountTo": "/static/uploads"
+      }
+    ]
+}
