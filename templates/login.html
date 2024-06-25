@@ -7,39 +7,44 @@
 
 {% block content %}
 
-        <div class="container" style="padding-top: 160px;">
-        <input type="checkbox" id="flip">
+    <div class="container" style="padding-top: 160px;">
         <div class="forms" >
             <div class="form-content" >
+                <div class="login-form" style="margin:0 auto; padding-left:30px;">
+                    <div class="title">Login</div>
+                    <form method="POST">
+                            <div class="input-box">
+                                <input type="text" placeholder="Username" name="username" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" placeholder="Password" name="password" required>
+                            </div>
+                            <div class="input-box">
+                                <input type="password" placeholder="Confirm Password" name="confirm_password" required>
+                            </div>
+                                
+                            <div class="button input-box">
+                                <input type="submit" value="Sumbit">
+                            </div>
+                            <div style="padding-left:110px; padding-top: 10px; padding-bottom: 10px;">Don't have an account? <a href="/register"><u for="flip"><b>Register Now</b></u></a></div>
 
-            <div class="login-form" style="margin:0 auto;">
-                <div class="title">Login</div>
-                <form method="POST">
-                <div class="input-boxes">
-                    <div class="input-box">
-                    <i class="fas fa-envelope"></i>
-                    <input type="text" placeholder="Username" name="username" required>
-                    </div>
-                    <div class="input-box">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Password" name="password" required>
-                    </div>
-                    <div class="input-box">
-                        <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="confirm_password" required>
-                        </div>
-                        
-                        <div class="button input-box">
-                            <input type="submit" value="Sumbit">
-                        </div>
-                    <div class="text sign-up-text">Don't have an account? <a href="/register"><u for="flip">Register Now</u></a></div>
+
+
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                            {% for category , message in messages %}
+                                <div class="alert alert-{{ category }}" role="alert" style="padding-top:20px;">
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+
+                    </form>
                 </div>
-            </form>
             </div>
-
         </div>
-        </div>
-        </div>
+    </div>
 
         
 {% endblock %}

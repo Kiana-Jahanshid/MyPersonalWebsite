@@ -648,12 +648,12 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
   width: 20px;
 }
 .forms .form-content .input-boxes{
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .forms .form-content .input-box{
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 36px;
   width: 100%;
   margin: 10px 0;
   position: relative;
