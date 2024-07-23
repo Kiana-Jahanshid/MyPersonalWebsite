@@ -14,20 +14,7 @@
   </head>
   <body>
     <div class="container-scroller">
-      <div class="row p-0 m-0 proBanner" id="proBanner">
-        <div class="col-md-12 p-0 m-0">
-          <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
-            <div class="ps-lg-3">
-            </div>
-            <div class="d-flex align-items-center justify-content-between">
-              <a href="https://www.bootstrapdash.com/product/purple-bootstrap-admin-template/"><i class="mdi mdi-home me-3 text-white"></i></a>
-              <button id="bannerClose" class="btn border-0 p-0">
-                <i class="mdi mdi-close text-white mr-0"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
@@ -186,7 +173,7 @@
               <div class="col-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Image Classification's Comments </h4>
+                    <h4 class="card-title">Comments </h4>
                     <div class="table-responsive">
                       <table class="table">
                         <thead>
@@ -196,7 +183,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                        {% for comment , username in ClassificationComments %}  
+                        {% for comment , username in comments %}  
                           <tr>
                             <td>
                               <img src="static/images/faces-clipart/pic-4.png" class="me-2" alt="image"> {{ username }}
@@ -214,38 +201,6 @@
               </div>
             </div>
 
-
-            <div class="row">
-              <div class="col-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title">Face Analysis's Comments </h4>
-                    <div class="table-responsive">
-                      <table class="table">
-                        <thead>
-                          <tr>
-                            <th> Username </th>
-                            <th> comment </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                        {% for comment , username in FaceAnalysisComments %}  
-                          <tr>
-                            <td>
-                              <img src="static/images/faces-clipart/pic-4.png" class="me-2" alt="image"> {{ username }}
-                            </td>
-                            <td>
-                              <label class="me-2">{{ comment | safe }}</label>
-                            </td>
-                          </tr>
-                        {% endfor %}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
             <div class="row">
               <div class="col-md-7 grid-margin stretch-card">

@@ -41,7 +41,7 @@ def fetch_all_users():
     with Session(engine) as db_session :
         users = select(User)
         users = list(db_session.exec(users))
-        users_count = users.count()
+        users_count = Session(engine).query(User).count()
         return users , users_count
 
 def fetch_comments():

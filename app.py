@@ -129,7 +129,7 @@ def pannel_admin():
             formatted_time = parsed_time.strftime('%Y-%m-%d %H:%M:%S')
             user.joined_time = relative_time_from_string(formatted_time)  
         comments = fetch_comments()
-        return  render_template("admin.html" , username= flask_session.get("username") , users=users , user_count=user_count , comments=comments)
+        return  render_template("templates/admin.html" , username= flask_session.get("username") , users=users , user_count=user_count , comments=comments)
     else :
         flash("first login to website to access admin pannel ⛔")
         return redirect(url_for("login"))
@@ -152,7 +152,7 @@ def comments():
 def send_personal_info():
     info = {"Fisrtname" : "kiana",
             "lastname"  : "jahanshid",
-            "job" : "future programmer", 
+            "job" : "programmer to be ", 
             "age" : "30" , 
             "degree" : "master of science"}
     jsonformat = json.dumps(info , indent=1)
